@@ -47,8 +47,6 @@
 </strong></p>
   </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
-<script src="/js/index.js"></script>
 
 <div class="row justify-content-md-center">
     <div class="col-md-6 col-md-offset-2 col-sm-12">
@@ -58,12 +56,15 @@
                     Tulis Amarahmu
                 </div>
                 <div class="panel-body">
-                    <textarea class="form-control" placeholder="sial..." rows="3"></textarea>
+                  <form id="message-form">
+                    <textarea name="message" class="form-control" placeholder="sial..." rows="3"></textarea>
                     <br>
-                    <button type="button" class="btn btn-danger pull-right">SMASH!</button>
+                    <button class="btn btn-danger pull-right">SMASH!</button>
+                  </form>
+
                     <div class="clearfix"></div>
                     <hr>
-                    <ul class="media-list">
+                    <ul class="media-list" id="messages">
                         <li class="media">
                             <a href="#" class="pull-left">
                                 <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle">
@@ -75,17 +76,7 @@
                                 </p>
                             </div>
                         </li>
-                        <li class="media">
-                            <a href="#" class="pull-left">
-                                <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle"">
-                            </a>
-                            <div class="media-body">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Lorem ipsum dolor sit amet, <a href="#">#consecteturadipiscing </a>.
-                                </p>
-                            </div>
-                        </li>
+
 
                     </ul>
                 </div>
@@ -94,5 +85,8 @@
 
     </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/jquery-3.3.1.min.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>
