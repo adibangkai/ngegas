@@ -47,6 +47,18 @@
 </strong></p>
   </div>
 </div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io();
+
+  socket.on('connect', () => {
+    console.log('connected');
+  });
+
+  socket.on('disconnect',() => {
+    console.log('dc from server');
+  });
+</script>
 <div class="row justify-content-md-center">
     <div class="col-md-6 col-md-offset-2 col-sm-12">
         <div class="comment-wrapper">
