@@ -14,17 +14,16 @@ socket.on('newMessage',function (message){
   var li = jQuery('<li class="media"><a href="#" class="pull-left"><img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle"></a></li>');
   li.text(`${message.text}`);
 
-  jQuery('#messages').append(li);
+  jQuery('#messages').prepend(li);
 });
 
 
 jQuery('#message-form').on('submit',function(e) {
   e.preventDefault();
-
+  var messageTextbox = jQuery('[name=message]')
   socket.emit('createMessage', {
-    text:jQuery('[name=message]').val()
+    text:messageTextbox.val()
   },function(){
-
-
+    messageTextbox.val('')
   });
 });
