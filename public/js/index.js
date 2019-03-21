@@ -11,17 +11,12 @@ socket.on('disconnect',() => {
 
 socket.on('newMessage',function (message){
   console.log('newMessage',message);
-  var li = jQuery('<li></li>');
-  li.text(` ${message.text}`);
+  var li = jQuery('<li class="media"><a href="#" class="pull-left"><img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="rounded-circle"></a></li>');
+  li.text(`${message.text}`);
 
   jQuery('#messages').append(li);
 });
 
-socket.emit('createMessage', {
-  text:"test"
-},function(data){
-  console.log('got it',data);
-});
 
 jQuery('#message-form').on('submit',function(e) {
   e.preventDefault();

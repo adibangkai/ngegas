@@ -14,8 +14,7 @@ app.use(express.static(publicPath));
 
 io.on('connection',(socket) => {
   console.log("new user connected");
-  socket.emit('newMessage',generateMessage('welcome to the app'));
-
+ 
    socket.on('createMessage',(message,callback)=>{
       console.log('createMessage',message);
       io.emit('newMessage', generateMessage(message.text));
